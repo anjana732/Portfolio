@@ -19,6 +19,7 @@
                 </ul>
             </nav>
             <div class="header-text">
+        
                 <p>UI/UX Designer</p>
                 <h1>Hi, I am <span>Anjana</span><br> From India</h1>
             </div>
@@ -39,29 +40,28 @@
                         tium dignissimos autem, architecto saepe facilis
                          ipsa ab distinctio! Fugit amet ullam minus corporis.</p>
                         <div class="tab-titles">
-                            <p class="tab-links active-link">Sills</p>
-                            <p class="tab-links">Experience</p>
-                            <p class="tab-links">Education</p>
+                            <p class="tab-links active-link" onclick="opentab('skills')">Sills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
                         </div>
-                        <div class="tab-contents">
+                        <div class="tab-contents active-tab" id="skills">
                             <ul>
                                 <li><span>UI/UX</span><br>Designing web app interfaces</li>
                                 <li><span>Web Development</span><br>Web App Development</li>
                                 <li><span>App Development</span><br>Building Android/ios Apps</li>
                             </ul>
                         </div>
-                        <div class="tab-contents">
+                        <div class="tab-contents" id="experience">
                             <ul>
-                                <li><span>UI/UX</span><br></li>
-                                <li><span>Web Development</span><br>Web App Development</li>
-                                <li><span>App Development</span><br>Building Android/ios Apps</li>
+                                <li><span>Bharat Intern</span><br>Internship for Mobile Application Development </li>
+                                <li><span>Web Development</span><br>Created fully functional website for organisation</li>
+                                <li><span>Metailzy Internship</span><br>Worked with metailzy for a month</li>
                             </ul>
                         </div>
-                        <div class="tab-contents">
+                        <div class="tab-contents" id="education">
                             <ul>
-                                <li><span>UI/UX</span><br></li>
-                                <li><span>Web Development</span><br>Web App Development</li>
-                                <li><span>App Development</span><br>Building Android/ios Apps</li>
+                                <li><span>MCA Pondicherry University</span><br>Pondicherry, India<br>CGPA: 8.71</li>
+                                <li><span>BCA Patna Univesity</span><br>Patna, Bihar<br>Percentage: 79%</li>
                             </ul>
                         </div>
                 </div>
@@ -69,5 +69,29 @@
             </div>
         </div>
     </div>
+    <!--.........................Project................................-->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="services-list">
+                
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
 </html>
