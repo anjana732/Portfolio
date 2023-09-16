@@ -11,16 +11,24 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url();
+    background-image: url(Assets/Background.png);
     background-size: cover;
+    background-position: center;
 
 }
 .container{
-    padding: 10px;
+    padding: 0px 10%;
 
 }
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .logo{
-    width: 140px;
+    width: 110px;
+    height: 50px;
 }
 nav ul li{
     display: inline-block;
@@ -31,16 +39,17 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-
+    position: relative;
 }
 nav ul li a::after{
     content: '';
-    width: 100%;
+    width: 0;
     height: 3px;
     background: #ff004f;
     position: absolute;
     left: 0;
     bottom: -6px;
+    transition: 0.5s;
 }
 nav ul li a:hover::after{
     width: 100%;
@@ -56,6 +65,7 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #ff004f;
 }
+
 /*..........................About.................................*/
 #about{
     padding: 80px 0;
@@ -74,7 +84,7 @@ nav ul li a:hover::after{
     width: 100%;
     border-radius: 15px;
 }
-.about-col-1{
+.about-col-2{
     flex-basis: 60%;
 
 }
@@ -105,11 +115,15 @@ nav ul li a:hover::after{
     transition: 0.5s;
 }
 .tab-links.active-link::after{
-    width: 50%;
+    width: 100%;
 
 }
 .tab-contents ul li{
-    color: #ff004f;
+    list-style: none;
+    margin: 10px 0;
+    
+}
+.tab-contents ul li span{
+    color: #b54769;
     font-size: 14px;
-
 }
