@@ -380,3 +380,10 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+.read-more-container{
+    display: flex;
+    flex-direction: column;
+}
+.read-more-text{
+    display: none;
+}
