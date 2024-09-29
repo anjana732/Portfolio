@@ -16,7 +16,7 @@
                     <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Technology</a></li>
                     <li><a href="#portfolio">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                    
@@ -48,7 +48,7 @@
                               projects, ranging from dynamic web interfaces to robust mobile applications. Each project has reinforced my
                              belief in the power of technology to transform ideas into impactful solutions.</p>
                         <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('skills')">Sills</p>
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                             <p class="tab-links" onclick="opentab('experience')">Experience</p>
                             <p class="tab-links" onclick="opentab('education')">Education</p>
                         </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="tab-contents" id="education">
                             <ul>
-                                <li><span>MCA Pondicherry University</span><br>Pondicherry, India<br>CGPA: 8.71</li>
+                                <li><span>MCA Pondicherry University</span><br>Pondicherry, India<br>CGPA: 8.78</li>
                                 <li><span>BCA Patna Univesity</span><br>Patna, Bihar<br>Percentage: 79%</li>
                             </ul>
                         </div>
@@ -80,7 +80,7 @@
     <!--.........................Services................................-->
     <div id="services">
         <div class="container">
-            <h1 class="sub-title">Services</h1>
+            <h1 class="sub-title">Technology</h1>
             <div class="services-list">
                 <div>
                     <i class="fa-solid fa-code"></i>
@@ -120,7 +120,7 @@
             <h1 class="sub-title">Projects</h1>
             <div class="work-list">
                 <div class="work">
-                  <img src="Assets/PFT.webp">
+                  <img src="Assets/PFT.webp" alt="Finance Tracker" width="250" height="720">
                   <div class="layer">
                     <h3>Fianance Tracker Application</h3>
                     <p> a Personal Finance Tracker application designed to put you in control of your financial 
@@ -131,7 +131,7 @@
                   </div>
                 </div>
                 <div class="work">
-                    <img src="Assets/download.jpeg">
+                    <img src="Assets/download.jpeg" alt="Finance Tracker" width="250" height="720">
                     <div class="layer">
                         <h3>BMI Calculator</h3>
                         <p>Proud to present my latest creation – a BMI Calculator app designed to prioritize 
@@ -143,7 +143,7 @@
                       </div>
                 </div>
                 <div class="work">
-                    <img src="Assets/Nhrwwo.png">
+                    <img src="Assets/Nhrwwo.png" alt="Finance Tracker" width="250" height="720">
                     <div class="layer">
                         <h3>Organization website</h3>
                         <p>A full-fledged website crafted for an NGO using WordPress. 
@@ -158,7 +158,7 @@
                       </div>
                 </div>
             </div>
-            <a href="projects.html" class="btn">See More</a>
+            <a href="projects.html" class="btn project-btn">More Projects</a>
         </div>
     </div>
     <!--...............Contact......................-->
@@ -167,22 +167,22 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>anjanasingh1257@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i>7352861866</p>
+                    <!-- <p><i class="fa-solid fa-paper-plane"></i>anjanasingh1257@gmail.com</p> -->
+                    <!-- <p><i class="fa-solid fa-phone"></i>7352861866</p> -->
                     <div class="social-icons">
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href="mailto:anjanasingh1257@gmail.com"><i class="fa-solid fa-envelope"></i></i></a>
                         <a href=""><i class="fa-brands fa-square-instagram"></i></a>
                         <a href="https://github.com/anjana732"><i class="fa-brands fa-square-github"></i></a>
-                        <a href="https://www.linkedin.com/in/anjana-singh-86412a25b/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/anjana732/"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
-                    <a href="Assets/Resume.pdf" download class="btn btn2">Download CV</a>
+                    <a href="Assets/AnjanaResume.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your email" required>
-                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                         <button type="submit" class="btn btn2">Submit</button>
+                    <form name="send-mail">
+                        <input class="name" type="text" name="Name" placeholder="Your Name" required>
+                        <input class="email" type="email" name="Email" placeholder="Your email" required>
+                         <textarea class="message" name="Message" rows="6" placeholder="Your Message"></textarea>
+                         <button type="submit" class="btn btn2">Send</button>
                     </form>
                     <span id="msg"></span>
                 </div>
@@ -220,21 +220,29 @@
         }
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw_voA4rG7FXZHx0QTlom_JWvzpQfVoikQArXLwmBmCDokOKFXtI6WpOiafixmYI-rumA/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg");
+        const form = document.forms['send-mail']
         form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent sucessfully"
+            e.preventDefault();
+
+        const formData = new FormData(form);
+        const name = formData.get("Name");
+        const email = formData.get("Email");
+        const message = formData.get("Message");
+        
+        console.log("Name:", name);
+        console.log("Email:", email);
+        console.log("Message:", message);
+        const mailtoLink = `mailto:anjanasingh1257@gmail.com?subject=New Contact Message&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+        window.location.href = mailtoLink;
+        const msg = document.getElementById("msg");
+        msg.innerHTML = "Message sent sucessfully"
                 setTimeout(function(){
                     msg.innerHTML = ""
                 },5000)
                 form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
+        
         })
+
       </script>
 </body>
 </html>

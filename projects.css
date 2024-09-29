@@ -1,0 +1,58 @@
+ body {
+    background-color: #080808;
+    color: #fff;
+  }
+
+ 
+
+
+
+   .card {
+    margin-top: 20px;
+    background-color: #262626;
+    color: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+
+
+   .card:hover {
+    transform: translateY(-10px);
+    background: #ff004f;
+  }
+
+
+   .card-img-top {
+    border-radius: 10px 10px 0 0;
+    height: 250px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+   .card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+  }
+   .card-text {
+    color: #ababab;
+  }
+
+   .btn-primary {
+    background-color: #ff004f;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+
+  .btn-primary:hover {
+    background-color: #b54769;
+  }
+
+  .r-2{
+    margin-left: -15px;
+  }
+
