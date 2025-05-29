@@ -315,6 +315,10 @@ form .btn2{
 .project-btn{
     margin-left: -1px;
 }
+
+#form-status{
+    font-size: x-large;
+}
 /*..................CSS for small screen.........................*/
 nav .fa-solid{
     display: none;
