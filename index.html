@@ -29,6 +29,8 @@
 
                 <p>Software Developer </p>
                 <h1>Hi, I am <span>Anjana</span><br> From India</h1>
+                <button id="download-cv">Download CV</button>
+               
             </div>
         </div>
     </div>
@@ -65,8 +67,8 @@
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>Bharat Intern</span><br>Internship for Mobile Application Development </li>
-                            <li><span>Web Development</span><br>Created fully functional website for organisation</li>
+                            <li><span>Fristine Infotech Pvt. Ltd</span><br>Softeare Development Engineer (3rd june 2024 - 10th Feb 2025) </li>
+                            <li><span>Web Development</span><br>Created fully functional website for organisationf</li>
                             <li><span>Metailzy Internship</span><br>Worked with metailzy for a month</li>
                         </ul>
                     </div>
@@ -210,6 +212,16 @@
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
+
+
+        let downloadCV = document.getElementById("download-cv");
+            downloadCV.addEventListener("click", function(){
+                console.log("Download button clicked");
+                const link = document.createElement("a");
+                link.href = "Assets/Anjana_Kumari_Resume.pdf";
+                link.download = "Anjana_Kumari_Resume.pdf";
+                link.click();
+            })
         
       
         function opentab(tabname) {
@@ -257,6 +269,9 @@
             setTimeout(()=>{
                 formStatus.textContent = "";
             },5000)
+
+            //download cv on button click
+
         });
 
     </script>

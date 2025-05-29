@@ -319,6 +319,18 @@ form .btn2{
 #form-status{
     font-size: x-large;
 }
+
+#download-cv{
+    cursor: pointer;
+    padding: 10px 12px;
+    margin: 15px 0px;
+    background-color: #ff004f;
+    border: 1px solid #ff004f;
+    border-radius: 5px;
+    font-weight: 700;
+    color: aliceblue;
+    font-size: large;
+}
 /*..................CSS for small screen.........................*/
 nav .fa-solid{
     display: none;
