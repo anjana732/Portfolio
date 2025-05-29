@@ -175,7 +175,7 @@
                         <a href="https://github.com/anjana732"><i class="fa-brands fa-square-github"></i></a>
                         <a href="https://www.linkedin.com/in/anjana732/"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
-                    <a href="Assets/AnjanaResume.pdf" download class="btn btn2">Download CV</a>
+                    <a href="Assets/Anjana_Kumari_Resume.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
                     <form name="send-mail" onsubmit="sendEmail()">
@@ -219,77 +219,7 @@
             sidemenu.style.right = "-200px";
         }
     </script>
-<script>
-function sendEmail() {
-    Email.send({
-        Host: "smtp.gmail.com",
-        Username : "ziyaanjel80@gmail.com",
-        Password : "9C48B0F4BFC8698B74D8D2D39C8F04C81A66",
-        To : "anjanasingh1257@gmail.com",
-        From : "ziyaanjel80@gmail.com",
-        Subject: "Sending Email using javascript",
-        Body: "Well that was easy!!",
-    })
-        .then(function (message) {
-            alert("mail sent successfully")
-            console.log("sent")
-        }).catch( function(){
-            console.log("error");
-        });
-}
-</script>
+
   <script src="index.js"></script>
-   <script src="https://smtpjs.com/v3/smtp.js"></script>
-   <!-- <script>
-    const form = document.forms['send-mail']
-form.addEventListener('submit', e => {
-e.preventDefault();
-
-const formData = new FormData(form);
-const name = formData.get("Name");
-const email = formData.get("Email");
-const msgContent= formData.get("Message");
-
-console.log("Name:", name);
-console.log("Email:", email);
-console.log("Message:", msgContent);
-const msg = document.getElementById('msg');
-msg.innerHTML = "Message sent sucessfully"
-    setTimeout(function(){
-        msg.innerHTML = ""
-    },5000)
-    form.reset()
-
-    Email.send({
-     
-        Host : "smtp.elasticemail.com",
-        Username : "ziyaanjel80@gmail.com",
-        Password : "9C48B0F4BFC8698B74D8D2D39C8F04C81A66",
-        To : "anjanasingh1257@gmail.com",
-        From : "anjanasingh1257@gmail.com",
-        Subject : "New Message from Portfolio website",
-        Body : msgContent
-    }).then(
-      message => alert(message)
-    );
-
-     function sendEmail() {
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: "sender@email_address.com",
-                Password: "Enter your password",
-                To: 'receiver@email_address.com',
-                From: "sender@email_address.com",
-                Subject: "Sending Email using javascript",
-                Body: "Well that was easy!!",
-            })
-                .then(function (message) {
-                    alert("mail sent successfully")
-                });
-        }
-
-})
-</script>
-   -->
 </body>
 </html>
