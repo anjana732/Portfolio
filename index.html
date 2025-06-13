@@ -30,7 +30,7 @@
                 <p>Software Developer </p>
                 <h1>Hi, I am <span>Anjana</span><br> From India</h1>
                 <button id="download-cv">Download CV</button>
-               
+
             </div>
         </div>
     </div>
@@ -43,16 +43,10 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Hello! I'm Anjana, a passionate technologist and a graduate with a
-                        BCA from Patna University, currently furthering my knowledge with an MCA at
-                        Pondicherry University. My academic journey has been a blend of
-                        rigorous training and self-driven initiatives that have
-                        honed my skills in both web and application development.</p>
-                    <p>My expertise lies in Flutter and Java . Over the years, I've had the opportunity to work on
-                        diverse
-                        projects, ranging from dynamic web interfaces to robust mobile applications. Each project has
-                        reinforced my
-                        belief in the power of technology to transform ideas into impactful solutions.</p>
+                    <p>Hello! I'm Anjana, a passionate web developer with hands-on experience in building full-stack
+                        applications using React, Node.js, and TypeScript. I focus on creating clean, user-friendly
+                        interfaces and scalable backend systems. Currently, I'm working on real-world web development
+                        projects that solve practical problems and enhance user experience.</p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -67,15 +61,18 @@
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>Fristine Infotech Pvt. Ltd</span><br>Softeare Development Engineer (3rd june 2024 - 10th Feb 2025) </li>
+                            <li><span>Fristine Infotech Pvt. Ltd</span><br>Softeare Development Engineer (3rd june 2024
+                                - 10th Feb 2025) </li>
                             <li><span>Web Development</span><br>Created fully functional website for organisationf</li>
                             <li><span>Metailzy Internship</span><br>Worked with metailzy for a month</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>MCA Pondicherry University</span><br>Pondicherry, India<br>CGPA: 8.78</li>
-                            <li><span>BCA Patna Univesity</span><br>Patna, Bihar<br>Percentage: 79%</li>
+                            <li><span>MCA Pondicherry University - (Dec 2022 - May 2024)</span><br>Pondicherry,
+                                India<br>CGPA: 8.78</li>
+                            <li><span>BCA Patna Univesity - (June 2018 - Aug 2021)</span><br>Patna, Bihar<br>Percentage:
+                                79%</li>
                         </ul>
                     </div>
                 </div>
@@ -128,8 +125,23 @@
     <div id="portfolio">
         <div class="container">
             <h1 class="sub-title">Projects</h1>
+
+            <div id="project-tab">
+                <p class="tab-links active-link" onclick="opentab('frontend')">Front end</p>
+                <p class="tab-links" onclick="opentab('backend')">Backend</p>
+                <p class="tab-links" onclick="opentab('fullstack')">Full stack</p>
+            </div>
             <div class="work-list">
-                <div class="work">
+                <div>
+                  <div>
+                    <label class="switch">
+                        <input type="checkbox" id="frontend-toggle">
+                        <span class="slider" id="slider-text"></span>
+                      </label>
+                      <span id="toggle-label">Html/Css/Js</span>
+                </div>
+                   
+                <div class="work tab-contents active-tab" id="frontend">
                     <img src="Assets/PFT.webp" alt="Finance Tracker" width="250" height="720">
                     <div class="layer">
                         <h3>Fianance Tracker Application</h3>
@@ -140,7 +152,14 @@
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
-                <div class="work">
+                </div>
+                <div>
+                <div class="work tab-contents" id="backend">
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-switch">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="toggle-label">Node.Js</span>
                     <img src="Assets/download.jpeg" alt="Finance Tracker" width="250" height="720">
                     <div class="layer">
                         <h3>BMI Calculator</h3>
@@ -152,7 +171,9 @@
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
-                <div class="work">
+                </div>
+              
+                <div class="work tab-contents" id="fullstack">
                     <img src="Assets/Nhrwwo.png" alt="Finance Tracker" width="250" height="720">
                     <div class="layer">
                         <h3>Organization website</h3>
@@ -167,6 +188,7 @@
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
+                
             </div>
             <a href="projects.html" class="btn project-btn">More Projects</a>
         </div>
@@ -202,7 +224,7 @@
 
                         <button type="submit" class="btn btn2">Send</button>
                     </form>
-                    
+
                 </div>
 
             </div>
@@ -213,17 +235,23 @@
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
+        const toggleSwitch = document.getElementById("toggle-switch");
+        const toggleLabel = document.getElementById("toggle-label");
+
+        toggleSwitch.addEventListener("change", function () {
+            toggleLabel.textContent = this.checked ? "On" : "Off";
+        });
 
         let downloadCV = document.getElementById("download-cv");
-            downloadCV.addEventListener("click", function(){
-                console.log("Download button clicked");
-                const link = document.createElement("a");
-                link.href = "Assets/Anjana_Kumari_Resume.pdf";
-                link.download = "Anjana_Kumari_Resume.pdf";
-                link.click();
-            })
-        
-      
+        downloadCV.addEventListener("click", function () {
+            console.log("Download button clicked");
+            const link = document.createElement("a");
+            link.href = "Assets/Anjana_Kumari_Resume.pdf";
+            link.download = "Anjana_Kumari_Resume.pdf";
+            link.click();
+        })
+
+
         function opentab(tabname) {
             for (tablink of tablinks) {
                 tablink.classList.remove("active-link");
@@ -247,17 +275,17 @@
             try {
                 const response = await fetch("https://formspree.io/f/mzzrnqve", {
                     method: "POST",
-                    headers : {
-                        Accept : "application/json",
+                    headers: {
+                        Accept: "application/json",
                     },
                     body: data
                 })
 
-                if(response.ok){
+                if (response.ok) {
                     formStatus.textContent = "Contact form submitted Successfully !";
                     formStatus.style.color = "green";
                     sendMail.reset();
-                }else{
+                } else {
                     formStatus.textContent = "Something went wrong!";
                     formStatus.style.color = "red";
                 }
@@ -266,11 +294,9 @@
                 formStatus.style.color = "red";
             }
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 formStatus.textContent = "";
-            },5000)
-
-            //download cv on button click
+            }, 5000)
 
         });
 
